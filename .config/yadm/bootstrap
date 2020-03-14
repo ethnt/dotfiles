@@ -51,7 +51,3 @@ if [[ ! $current_iterm_pref_folder =~ "$HOME/.config/iterm2" ]]; then
 else
   echo "✔ ${bold}iTerm2 already configured, skipping...${normal}"
 fi
-
-# Start Homebrew services
-echo "⇒ ${bold}Starting services...${normal}"
-brew services start postgresql
