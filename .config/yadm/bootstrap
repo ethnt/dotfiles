@@ -21,7 +21,7 @@ else
 fi
 
 # Install Oh My Fish!
-if [ ! -d ~/.local/share/omf ]; then
+if [ ! -d "$HOME/.local/share/omf" ]; then
   echo "⇒ ${bold}Installing Oh My Fish...${normal}"
   
   curl -L https://get.oh-my.fish | fish
