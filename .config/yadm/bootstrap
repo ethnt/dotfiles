@@ -1,0 +1,41 @@
+#!/bin/sh
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+# Install Homebrew dependencies
+if ! command -v brew >/dev/null 2>&1; then
+  echo "⇒ ${bold}Installing Homebrew...${normal}"
+  
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  echo "✔ ${bold}Homebrew already installed, skipping...${normal}"
+fi
+
+if [ -f "$HOME/.Brewfile" ]; then
+  echo "⇒ ${bold}Installing Homebrew formulae...${normal}"
+  
+  brew bundle --global
+fi
+
+# Install Oh My Fish!
+if [ ! -d ~/.local/share/omf ]; then
+  echo "⇒ ${bold}Installing Oh My Fish...${normal}"
+  
+  curl -L https://get.oh-my.fish | fish
+
+  omf install agnoster
+  omf theme agnoster
+else
+  echo "✔ ${bold}Oh My Fish already installed, skipping...${normal}"
+fi
+
+# Install Oh My Tmux
+if [ ! -d "$HOME/.tmux" ]; then
+  echo "✔ ${bold}Installing Oh My Tmux...${normal}"
+
+  git clone https://github.com/gpakosz/.tmux.git
+  ln -s -f .tmux/.tmux.conf
+else
+  echo "✔ ${bold}Oh My Tmux already installed, skipping...${normal}"
+fi
