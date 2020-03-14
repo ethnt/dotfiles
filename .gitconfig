@@ -1,0 +1,7 @@
+[alias]
+	s = status
+[user]
+	name = Ethan Turkeltaub
+	email = ethan.turkeltaub@gmail.com
+[core]
+	editor = code --wait
