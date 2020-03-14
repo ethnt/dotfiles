@@ -32,7 +32,7 @@ else
   echo "✔ ${bold}Oh My Fish already installed, skipping...${normal}"
 fi
 
-# Install Oh My Tmux
+# Install Oh My Tmux!
 if [ ! -d "$HOME/.tmux" ]; then
   echo "⇒ ${bold}Installing Oh My Tmux...${normal}"
 
@@ -51,3 +51,7 @@ if [[ ! $current_iterm_pref_folder =~ "$HOME/.config/iterm2" ]]; then
 else
   echo "✔ ${bold}iTerm2 already configured, skipping...${normal}"
 fi
+
+# Start Homebrew services
+echo "⇒ ${bold}Starting services...${normal}"
+brew services start postgresql
