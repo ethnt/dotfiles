@@ -12,10 +12,12 @@ else
   echo "✔ ${bold}Homebrew already installed, skipping...${normal}"
 fi
 
-if [ -f "$HOME/.Brewfile" ]; then
+if ! brew bundle check --global >/dev/null 2>&1; then
   echo "⇒ ${bold}Installing Homebrew formulae...${normal}"
   
   brew bundle --global
+else
+  echo "✔ ${bold}Homebrew formulae already installed, skipping...${normal}"
 fi
 
 # Install Oh My Fish!
@@ -32,10 +34,20 @@ fi
 
 # Install Oh My Tmux
 if [ ! -d "$HOME/.tmux" ]; then
-  echo "✔ ${bold}Installing Oh My Tmux...${normal}"
+  echo "⇒ ${bold}Installing Oh My Tmux...${normal}"
 
   git clone https://github.com/gpakosz/.tmux.git
   ln -s -f .tmux/.tmux.conf
 else
   echo "✔ ${bold}Oh My Tmux already installed, skipping...${normal}"
+fi
+
+# Configure iTerm
+current_iterm_pref_folder="$(defaults read com.googlecode.iterm2 PrefsCustomFolder)"
+if [[ ! $current_iterm_pref_folder =~ "$HOME/.config/iterm2" ]]; then
+  echo "⇒ ${bold}Configuring iTerm2...${normal}"
+
+  defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.config/iterm2"
+else
+  echo "✔ ${bold}iTerm2 already configured, skipping...${normal}"
 fi
