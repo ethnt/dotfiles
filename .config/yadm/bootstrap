@@ -1,72 +1,63 @@
-#!/bin/bash
+#!/usr/local/bin/fish
 
-echo_bold () {
-  bold=$(tput bold)
-  normal=$(tput sgr0)
-
-  echo "${bold}$1${normal}"
-}
-
-# Install Homebrew dependencies
-if command -v brew >/dev/null 2>&1; then
-  echo_bold "✔ Homebrew already installed, skipping..."
-else
-  echo_bold "⇒ Installing Homebrew..."
-
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
+function echo_bold
+  set_color -o
+  
+  echo $argv
+  
+  set_color normal
+end
 
 # Install Homebrew formulae
-if brew bundle check --global >/dev/null 2>&1; then
+if brew bundle check --global >/dev/null 2>&1
   echo_bold "✔ Homebrew formulae already installed, skipping..."
 else
-  echo_bold "⇒ Installing Homebrew formulae..."
-
   brew bundle --global
-fi
+end
 
 # Install Oh My Fish!
-if [ -d "$HOME/.local/share/omf" ]; then
-  echo_bold "✔ Oh My Fish! already installed, skipping..."
+if test -d "$HOME/.local/share/omf"
+  echo_bold "✔ Oh My Fish already installed, skipping..."
 else
-  echo_bold "⇒ Installing Oh My Fish!..."
+  echo_bold "⇒ Installing Oh My Fish..."
 
   curl -L https://get.oh-my.fish | fish
 
   omf install agnoster
   omf theme agnoster
-fi
+end
 
 # Install Oh My Tmux!
-if [ -d "$HOME/.tmux" ]; then
-  echo_bold "✔ Oh My Tmux! already installed, skipping..."
+if test -d "$HOME/.tmux"
+  echo_bold "✔ Oh My Tmux already installed, skipping..."
 else
-  echo_bold "⇒ Installing Oh My Tmux!..."
+  echo_bold "⇒ Installing Oh My Tmux..."
 
   git clone https://github.com/gpakosz/.tmux.git
   ln -s -f .tmux/.tmux.conf
-fi
+end
 
 # Configure iTerm
-current_iterm_pref_folder="$(defaults read com.googlecode.iterm2 PrefsCustomFolder)"
-if [[ $current_iterm_pref_folder =~ "$HOME/.config/iterm2" ]]; then
+set current_iterm_pref_folder (defaults read com.googlecode.iterm2 PrefsCustomFolder)
+if test "$current_iterm_pref_folder" = "$HOME/.config/iterm2"
   echo_bold "✔ iTerm2 already configured, skipping..."
 else
   echo_bold "⇒ Configuring iTerm2..."
 
   defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.config/iterm2"
-fi
+end
 
 # Install VSCode extensions
-# set desired_vscode_extensions alefragnani.project-manager Braver.vscode-solarized ms-vscode.atom-keybindings sharat.vscode-brewfile skyapps.fish-vscode syler.sass-indented
-# set existing_vscode_extensions (code --list-extensions)
-# if test "$desired_vscode_extensions" = "$existing_vscode_extensions"
-#   echo_bold "✔ Visual Studio Code extensions already installed, skipping..."
-# else
-#   echo_bold "⇒ Installing Visual Studio Code extensions..."
-#   for extension in $desired_vscode_extensions
-#     if not contains $extension $existing_vscode_extensions
-#       code --install-extension $extension
-#     end
-#   end
-# end
+set desired_vscode_extensions alefragnani.project-manager Braver.vscode-solarized EditorConfig.EditorConfig ms-vscode.atom-keybindings octref.vetur sharat.vscode-brewfile skyapps.fish-vscode syler.sass-indented
+set existing_vscode_extensions (code --list-extensions)
+if test "$desired_vscode_extensions" = "$existing_vscode_extensions"
+  echo_bold "✔ Visual Studio Code extensions already installed, skipping..."
+else
+  echo_bold "⇒ Installing Visual Studio Code extensions..."
+  for extension in $desired_vscode_extensions
+    if not contains $extension $existing_vscode_extensions
+      code --install-extension $extension
+    end
+  end
+end
+
