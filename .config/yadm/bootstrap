@@ -1,53 +1,72 @@
-#!/bin/sh
+#!/usr/local/bin/fish
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
-# Install Homebrew dependencies
-if ! command -v brew >/dev/null 2>&1; then
-  echo "⇒ ${bold}Installing Homebrew...${normal}"
+function echo_bold
+  set_color -o
   
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  echo $argv
+  
+  set_color normal
+end
+
+# Install Homebrew
+if command -v brew >/dev/null 2>&1
+  echo_bold "✔ Homebrew already installed, skipping..."
 else
-  echo "✔ ${bold}Homebrew already installed, skipping...${normal}"
-fi
+  echo_bold "⇒ Installing Homebrew..."
 
-if ! brew bundle check --global >/dev/null 2>&1; then
-  echo "⇒ ${bold}Installing Homebrew formulae...${normal}"
-  
+  /usr/bin/ruby -e (curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
+end
+
+# Install Homebrew formulae
+if brew bundle check --global >/dev/null 2>&1
+  echo_bold "✔ Homebrew formulae already installed, skipping..."
+else
   brew bundle --global
-else
-  echo "✔ ${bold}Homebrew formulae already installed, skipping...${normal}"
-fi
+end
 
 # Install Oh My Fish!
-if [ ! -d "$HOME/.local/share/omf" ]; then
-  echo "⇒ ${bold}Installing Oh My Fish...${normal}"
-  
+if test -d "$HOME/.local/share/omf"
+  echo_bold "✔ Oh My Fish already installed, skipping..."
+else
+  echo_bold "⇒ Installing Oh My Fish..."
+
   curl -L https://get.oh-my.fish | fish
 
   omf install agnoster
   omf theme agnoster
-else
-  echo "✔ ${bold}Oh My Fish already installed, skipping...${normal}"
-fi
+end
 
 # Install Oh My Tmux!
-if [ ! -d "$HOME/.tmux" ]; then
-  echo "⇒ ${bold}Installing Oh My Tmux...${normal}"
+if test -d "$HOME/.tmux"
+  echo_bold "✔ Oh My Tmux already installed, skipping..."
+else
+  echo_bold "⇒ Installing Oh My Tmux..."
 
   git clone https://github.com/gpakosz/.tmux.git
   ln -s -f .tmux/.tmux.conf
-else
-  echo "✔ ${bold}Oh My Tmux already installed, skipping...${normal}"
-fi
+end
 
 # Configure iTerm
-current_iterm_pref_folder="$(defaults read com.googlecode.iterm2 PrefsCustomFolder)"
-if [[ ! $current_iterm_pref_folder =~ "$HOME/.config/iterm2" ]]; then
-  echo "⇒ ${bold}Configuring iTerm2...${normal}"
+set current_iterm_pref_folder (defaults read com.googlecode.iterm2 PrefsCustomFolder)
+if test "$current_iterm_pref_folder" = "$HOME/.config/iterm2"
+  echo_bold "✔ iTerm2 already configured, skipping..."
+else
+  echo_bold "⇒ Configuring iTerm2..."
 
   defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.config/iterm2"
+end
+
+# Install VSCode extensions
+set desired_vscode_extensions alefragnani.project-manager Braver.vscode-solarized ms-vscode.atom-keybindings sharat.vscode-brewfile skyapps.fish-vscode syler.sass-indented
+set existing_vscode_extensions (code --list-extensions)
+if test "$desired_vscode_extensions" = "$existing_vscode_extensions"
+  echo_bold "✔ Visual Studio Code extensions already installed, skipping..."
 else
-  echo "✔ ${bold}iTerm2 already configured, skipping...${normal}"
-fi
+  echo_bold "⇒ Installing Visual Studio Code extensions..."
+  for extension in $desired_vscode_extensions
+    if not contains $extension $existing_vscode_extensions
+      code --install-extension $extension
+    end
+  end
+end
+
