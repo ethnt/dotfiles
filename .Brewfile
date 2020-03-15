@@ -14,6 +14,7 @@ brew "hub"
 brew "mas"
 brew "postgresql", restart_service: true
 brew "tmux"
+brew "tree"
 brew "yadm"
 brew "github/gh/gh"
 cask "1password"
