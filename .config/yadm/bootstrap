@@ -47,6 +47,16 @@ else
   defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.config/iterm2"
 end
 
+# Configure VSCode
+if test -h "$HOME/Library/Application Support/Code/User/settings.json"
+  echo_bold "✔ Visual Studio Code already configured, skipping..."
+else
+  echo_bold "⇒ Configuring Visual Studio Code..."
+
+  rm "$HOME/Library/Application Support/Code/User/settings.json"
+  ln -s "$HOME/.vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+end
+
 # Install VSCode extensions
 set desired_vscode_extensions alefragnani.project-manager Braver.vscode-solarized EditorConfig.EditorConfig ms-vscode.atom-keybindings octref.vetur sharat.vscode-brewfile skyapps.fish-vscode syler.sass-indented
 set existing_vscode_extensions (code --list-extensions)

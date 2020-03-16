@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>ApplePressAndHoldEnabled</key>
@@ -12,6 +14,8 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>BootstrapDaemon</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Solarized Dark</key>
@@ -497,7 +501,7 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>496 506 799 448 0 0 1792 1097 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 80 1792 1017 0 0 1792 1097 </string>
+	<string>0 595 730 502 0 0 1792 1097 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1197,7 +1201,11 @@
 	<key>NoSyncInstallationId</key>
 	<string>3CCDB939-AE45-42A4-9BEA-32EE8D619E6C</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>15</integer>
+	<integer>20</integer>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>606008136.12765503</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -1959,7 +1967,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-13T23:41:40Z</date>
+	<date>2020-03-15T00:19:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SoundForEsc</key>

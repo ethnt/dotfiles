@@ -1,0 +1,10 @@
+{
+  "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
+  "editor.fontFamily": "Operator Mono Lig",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "atomKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true
+}

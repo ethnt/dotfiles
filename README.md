@@ -13,7 +13,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 Then install YADM and Fish (needed for the bootstrap file):
 
 ```
-$ brew install yadm
+$ brew install yadm fish
 ```
 
 Now bootstrap using this repository:
