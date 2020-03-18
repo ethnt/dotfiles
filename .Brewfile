@@ -23,9 +23,12 @@ cask "1password-cli"
 cask "alfred"
 cask "bartender"
 cask "brave-browser"
+cask "docker"
 cask "dropbox"
 cask "firefox"
+cask "glyphfinder"
 cask "google-chrome"
+cask "graphiql"
 cask "istat-menus"
 cask "iterm2"
 cask "logitech-options"
@@ -36,9 +39,12 @@ cask "spectacle"
 cask "spotify"
 cask "viscosity"
 cask "visual-studio-code"
+cask "vlc"
+cask "whatsapp"
 cask "zoom"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
+mas "Deliveries", id: 924726344
 mas "Fantastical", id: 975937182
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825

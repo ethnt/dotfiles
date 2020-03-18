@@ -1,0 +1,22 @@
+{
+  "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
+  "editor.fontFamily": "Operator Mono Lig, mono",
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.formatOnPaste": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "ruby.useBundler": true,
+  "ruby.interpreter.commandPath": "/Users/ethan/.asdf/shims/ruby",
+  "ruby.lint": {
+    "rubocop": {
+      "command": "bundle exec rubocop",
+      "lint": true
+    }
+  }
+}
