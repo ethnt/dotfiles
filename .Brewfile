@@ -27,7 +27,6 @@ cask "arq"
 cask "bartender"
 cask "brave-browser"
 cask "docker"
-cask "dropbox"
 cask "firefox"
 cask "glyphfinder"
 cask "google-chrome"
@@ -53,7 +52,6 @@ mas "Fantastical", id: 975937182
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Spark", id: 1176895641
 mas "Things", id: 904280696
 mas "Tweetbot", id: 1384080005
