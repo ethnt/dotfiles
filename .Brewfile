@@ -45,7 +45,6 @@ cask "viscosity"
 cask "visual-studio-code"
 cask "vlc"
 cask "whatsapp"
-cask "zoom"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
 mas "Deliveries", id: 924726344
