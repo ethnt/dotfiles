@@ -14,6 +14,7 @@ brew "gnupg"
 brew "hivemind"
 brew "hub"
 brew "mas"
+brew "pinentry-mac"
 brew "tmux"
 brew "overmind"
 brew "postgresql", restart_service: true
