@@ -2,5 +2,9 @@
 	s = status
 [core]
 	editor = code --wait
+[user]
+	signingkey = 4C3B5002BF9777B3
+[commit]
+	gpgsign = true
 [include]
 	path = .gitconfig.local
