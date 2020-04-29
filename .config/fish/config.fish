@@ -9,3 +9,6 @@ eval (hub alias -s)
 
 # 1Password
 # eval (op signin my)
+
+# Erlang/Elixir
+set -gx ERL_AFLAGS "-kernel shell_history enabled"

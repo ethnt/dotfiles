@@ -1,7 +1,7 @@
 {
   "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
-  "editor.fontFamily": "Operator Mono Lig, mono",
-  "editor.fontSize": 16,
+  "editor.fontFamily": "MonoLisa, Operator Mono Lig, mono",
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
@@ -18,5 +18,12 @@
       "command": "bundle exec rubocop",
       "lint": true
     }
-  }
+  },
+  "elixirLinter.useStrict": true,
+  "window.zoomLevel": 0,
+  "editor.lineHeight": 25,
+  "editor.rulers": [
+    120
+  ],
+  "editor.formatOnSave": true
 }
