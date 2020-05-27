@@ -1,7 +1,7 @@
 {
   "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
-  "editor.fontFamily": "Operator Mono Lig, mono",
-  "editor.fontSize": 16,
+  "editor.fontFamily": "MonoLisa, Times, Operator Mono Lig, mono",
+  "editor.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
@@ -18,5 +18,16 @@
       "command": "bundle exec rubocop",
       "lint": true
     }
-  }
+  },
+  "editor.lineHeight": 25,
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "editor.rulers": [
+    120
+  ],
+  "elixirLS.dialyzerFormat": "dialyxir_short",
+  "window.zoomLevel": 0,
+  "elixirLinter.useStrict": true,
+  "explorer.compactFolders": false
 }
