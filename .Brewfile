@@ -6,6 +6,7 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "nektos/tap"
 tap "twpayne/taps"
 cask "adoptopenjdk8"
 brew "openssl@1.1"
@@ -14,9 +15,9 @@ brew "coreutils"
 brew "asdf"
 brew "cmake"
 brew "dcmtk"
-brew "docker"
+brew "docker", link: false
 brew "graphviz"
-brew "eralchemy"
+brew "eralchemy", link: false
 brew "fish"
 brew "gdcm"
 brew "git"
@@ -25,16 +26,19 @@ brew "hivemind"
 brew "hub"
 brew "mas"
 brew "neo4j", restart_service: true
+brew "neovim"
 brew "openjdk"
 brew "tmux"
 brew "overmind"
 brew "pinentry-mac"
 brew "postgresql", restart_service: true
+brew "redis", restart_service: true
 brew "task"
 brew "telnet"
 brew "tree"
 brew "yadm"
 brew "github/gh/gh"
+brew "nektos/tap/act"
 cask "1password"
 cask "1password-cli"
 cask "adoptopenjdk8-jre"
@@ -49,9 +53,11 @@ cask "firefox"
 cask "glyphfinder"
 cask "google-chrome"
 cask "graphiql"
+cask "hazel"
 cask "istat-menus"
 cask "iterm2"
 cask "karabiner-elements"
+cask "kite"
 cask "logitech-options"
 cask "ngrok"
 cask "notion"
@@ -68,6 +74,7 @@ cask "viscosity"
 cask "visual-studio-code"
 cask "vlc"
 cask "whatsapp"
+cask "zerotier-one"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
 mas "Deliveries", id: 924726344
@@ -80,5 +87,6 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Spark", id: 1176895641
+mas "Tailscale", id: 1475387142
 mas "Things", id: 904280696
 mas "Tweetbot", id: 1384080005

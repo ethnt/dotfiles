@@ -25,5 +25,16 @@
   "editor.rulers": [
     120
   ],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "python.linting.enabled": false,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/*.pyc": true
+  },
+  "kite.showWelcomeNotificationOnStartup": false,
+  "workbench.editor.showTabs": true
 }
