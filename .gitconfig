@@ -1,7 +1,7 @@
 [alias]
 	s = status
 [core]
-	editor = code --wait
+	editor = micro
 [user]
 	signingkey = 4C3B5002BF9777B3
 [include]
