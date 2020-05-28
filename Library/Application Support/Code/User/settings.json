@@ -1,17 +1,36 @@
 {
-  "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
-  "editor.fontFamily": "MonoLisa, Times, Operator Mono Lig, mono",
-  "editor.fontSize": 14,
-  "editor.fontLigatures": true,
-  "editor.tabSize": 2,
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
   "editor.detectIndentation": false,
-  "editor.insertSpaces": true,
+  "editor.fontFamily": "MonoLisa, Operator Mono Lig, mono",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
   "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.lineHeight": 25,
   "editor.multiCursorModifier": "ctrlCmd",
+  "editor.rulers": [
+    120
+  ],
+  "editor.tabSize": 2,
+  "elixirLS.dialyzerFormat": "dialyxir_short",
+  "elixirLinter.useStrict": true,
+  "explorer.compactFolders": false,
+  "files.exclude": {
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/__pycache__": true
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "ruby.useBundler": true,
+  "kite.showWelcomeNotificationOnStartup": false,
+  "python.linting.enabled": false,
   "ruby.interpreter.commandPath": "/Users/ethan/.asdf/shims/ruby",
   "ruby.lint": {
     "rubocop": {
@@ -19,15 +38,8 @@
       "lint": true
     }
   },
-  "editor.lineHeight": 25,
-  "[elixir]": {
-    "editor.defaultFormatter": "JakeBecker.elixir-ls"
-  },
-  "editor.rulers": [
-    120
-  ],
-  "elixirLS.dialyzerFormat": "dialyxir_short",
+  "ruby.useBundler": true,
   "window.zoomLevel": 0,
-  "elixirLinter.useStrict": true,
-  "explorer.compactFolders": false
+  "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
+  "workbench.editor.showTabs": true
 }
