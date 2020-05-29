@@ -60,3 +60,11 @@ else
     end
   end
 end
+
+# Install ASDF plugins
+asdf plugin-install ruby
+asdf plugin-install python
+asdf plugin-install elixir
+asdf plugin-install nodejs
+asdf plugin-install erlang
+
