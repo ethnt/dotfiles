@@ -1,5 +1,6 @@
 # Variables
 set -gx EDITOR code
+set -gx FZF_DEFAULT_COMMAND fd --type f
 
 # ASDF
 source /usr/local/opt/asdf/asdf.fish

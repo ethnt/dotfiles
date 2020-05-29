@@ -11,37 +11,35 @@ tap "semaphoreci/tap"
 tap "twpayne/taps"
 cask "adoptopenjdk8"
 brew "sqlite"
-brew "openssl@1.1"
 brew "ansible"
 brew "coreutils"
 brew "asdf"
 brew "cmake"
-brew "ffmpeg"
 brew "dcmtk"
 brew "docker", link: false
 brew "graphviz"
 brew "eralchemy", link: false
+brew "fd"
+brew "ffmpeg"
 brew "fish"
 brew "gdcm"
 brew "git"
 brew "gnupg"
-brew "graphviz"
 brew "hivemind"
 brew "hub"
 brew "mas"
-brew "mosh"
-brew "neo4j"
-brew "nmap"
 brew "micro"
+brew "mosh"
 brew "neo4j", restart_service: true
 brew "neovim"
+brew "nmap"
 brew "openjdk"
 brew "tmux"
 brew "overmind"
 brew "pinentry-mac"
 brew "postgresql", restart_service: true
-brew "sshpass"
 brew "redis", restart_service: true
+brew "sshpass"
 brew "task"
 brew "telnet"
 brew "tree"
@@ -92,11 +90,13 @@ cask "visual-studio-code"
 cask "vlc"
 cask "whatsapp"
 cask "zerotier-one"
+cask "zoom"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
 mas "Deliveries", id: 924726344
 mas "Diagrams", id: 1276248849
 mas "Fantastical", id: 975937182
+mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
@@ -106,3 +106,4 @@ mas "Spark", id: 1176895641
 mas "Tailscale", id: 1475387142
 mas "Things", id: 904280696
 mas "Tweetbot", id: 1384080005
+mas "Xcode", id: 497799835
