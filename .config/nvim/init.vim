@@ -35,6 +35,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " NERDTree
   Plug 'preservim/nerdtree'
+
+  " Pathogen
+  Plug 'tpope/vim-pathogen'
 call plug#end()
 
 set number
