@@ -38,6 +38,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Pathogen
   Plug 'tpope/vim-pathogen'
+
+  " Tmux integrations
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'benmills/vimux'
+
+  " Solarized color scheme
+  Plug 'iCyMind/NeoSolarized'
 call plug#end()
 
 set number
@@ -46,6 +53,7 @@ set ts=2
 set sw=2
 set expandtab
 set mouse=nv
+set termguicolors
 
 " Format elixir files on save
 autocmd BufWritePost *.exs,*.ex silent :!mix format %
@@ -71,12 +79,21 @@ vnoremap  <leader>y  "+y
 " Colorscheme
 syntax enable
 set background=dark
+colorscheme NeoSolarized
 let g:lightline = {
-      \ 'colorscheme': 'selenized_dark',
+      \ 'colorscheme': 'solarized',
       \ 'component_function': {
       \   'filename': 'LightlineFilename'
       \   }
       \ }
+
+let g:neosolarized_contrast = "high"
+
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 1
+
+set noshowmode
 
 " Smart case for searching
 set ignorecase
