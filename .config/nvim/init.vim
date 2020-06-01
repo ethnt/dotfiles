@@ -61,6 +61,9 @@ autocmd BufWritePost *.exs,*.ex silent :!mix format %
 " Format js and ts files on save
 autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx silent :!prettier --write %
 
+" Set correct file type for yrl files
+autocmd BufNewFile,BufRead *.yrl setfiletype erlang 
+
 " c-p file search
 map <C-p> :Files <CR>
 

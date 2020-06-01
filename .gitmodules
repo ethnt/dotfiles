@@ -1,3 +1,6 @@
 [submodule "/Users/ethan/.tmux/plugins/tpm"]
 	path = /Users/ethan/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule ".config/nvim/bundle/vim-erlang-compiler"]
+	path = .config/nvim/bundle/vim-erlang-compiler
+	url = https://github.com/vim-erlang/vim-erlang-compiler.git
