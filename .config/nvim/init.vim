@@ -45,6 +45,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Solarized color scheme
   Plug 'iCyMind/NeoSolarized'
+
+  " Comments
+  Plug 'tpope/vim-commentary'
 call plug#end()
 
 set number
@@ -84,9 +87,14 @@ syntax enable
 set background=dark
 colorscheme NeoSolarized
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename'
+      \   'colorscheme': 'solarized',
+      \   'active': {
+      \     'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \   },
+      \   'component_function': {
+      \     'gitbranch': 'FugitiveHead',
+      \     'filename': 'LightlineFilename'
       \   }
       \ }
 
