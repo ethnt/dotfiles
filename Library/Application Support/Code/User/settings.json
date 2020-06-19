@@ -41,5 +41,8 @@
   "ruby.useBundler": true,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
-  "workbench.editor.showTabs": true
+  "workbench.editor.showTabs": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
