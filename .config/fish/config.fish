@@ -13,3 +13,8 @@ eval (hub alias -s)
 
 # Erlang/Elixir
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
+
+# Python
+set -gx WORKON_HOME ~/.virtualenvs
+mkdir -p $WORKON_HOME
+source (virtualenvwrapper.sh)

@@ -10,7 +10,6 @@
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
   "editor.insertSpaces": true,
   "editor.lineHeight": 25,
   "editor.multiCursorModifier": "ctrlCmd",
