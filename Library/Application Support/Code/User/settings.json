@@ -41,5 +41,7 @@
   "ruby.useBundler": true,
   "window.zoomLevel": 0,
   "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
-  "workbench.editor.showTabs": true
+  "workbench.editor.showTabs": true,
+  "elixirLS.dialyzerEnabled": false,
+  "python.formatting.blackPath": "poetry run black"
 }

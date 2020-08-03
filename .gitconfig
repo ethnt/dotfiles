@@ -1,8 +1,10 @@
 [alias]
 	s = status
+  commit = commit -S
 [core]
 	editor = nvim
 [user]
-	signingkey = 4C3B5002BF9777B3
+	signingkey = 0x1262A5538EE9EE90
+	email = ethan@turkeltaub.dev
 [include]
 	path = .gitconfig.local
