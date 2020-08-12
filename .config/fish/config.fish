@@ -14,6 +14,12 @@ eval (hub alias -s)
 # Erlang/Elixir
 set -gx ERL_AFLAGS "-kernel shell_history enabled"
 
+# GPG stuff
+export GPG_TTY=(tty)
+export SSH_AUTH_SOCK=(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+
 # Python
 set -gx WORKON_HOME ~/.virtualenvs
 mkdir -p $WORKON_HOME

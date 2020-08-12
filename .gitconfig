@@ -3,6 +3,6 @@
 [core]
 	editor = nvim
 [user]
-	signingkey = 4C3B5002BF9777B3
+	signingkey = E00B7BDB725B82D93431682F1262A5538EE9EE90
 [include]
 	path = .gitconfig.local
