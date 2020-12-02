@@ -32,9 +32,12 @@
   "python.linting.enabled": false,
   "ruby.interpreter.commandPath": "/Users/ethan/.asdf/shims/ruby",
   "ruby.lint": {
+
+
     "rubocop": {
       "command": "bundle exec rubocop",
-      "lint": true
+      "lint": true,
+      "rails": true
     }
   },
   "ruby.useBundler": true,
@@ -43,5 +46,14 @@
   "workbench.editor.showTabs": true,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "ruby.format": "rubocop",
+  "ruby.intellisense": "rubyLocate",
+  "ruby.useLanguageServer": true
 }

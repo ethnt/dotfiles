@@ -1,35 +1,39 @@
 call plug#begin('~/.local/share/nvim/plugged')
   " Browser commands (-)
   Plug 'tpope/vim-vinegar'
-  
+
   " File searching
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  
+
   " Elixir utilities
   Plug 'slashmili/alchemist.vim'
-  
+
   " Surround commands (ysiw)
   Plug 'tpope/vim-surround'
-  
+
   " Git integrations
   Plug 'tpope/vim-fugitive'
-  
+
   " Bottom line for status
   Plug 'itchyny/lightline.vim'
-  
+
   " Pack of language syntaxes
   Plug 'sheerun/vim-polyglot'
-  
+
   " Linting engine
   Plug 'dense-analysis/ale'
-  
+
+  " Typescript tooling
+  Plug 'HerringtonDarkholme/yats.vim'
+  Plug 'mhartington/nvim-typescript', {'do': ':!install.sh \| UpdateRemotePlugins'}
+
   " Autocomplete popovers
   Plug 'Shougo/deoplete.nvim'
-  
+
   " Python Autocompletion
   Plug 'deoplete-plugins/deoplete-jedi'
-  
+
   " Distraction free mode
   Plug 'junegunn/goyo.vim'
 
@@ -65,7 +69,7 @@ autocmd BufWritePost *.exs,*.ex silent :!mix format %
 autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx silent :!prettier --write %
 
 " Set correct file type for yrl files
-autocmd BufNewFile,BufRead *.yrl setfiletype erlang 
+autocmd BufNewFile,BufRead *.yrl setfiletype erlang
 
 " c-p file search
 map <C-p> :Files <CR>
